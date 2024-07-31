@@ -1,0 +1,42 @@
+
+
+  .form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 500px;
+    color:black;
+    margin: 50px auto; /* Center the form horizontally */
+  }
+  
+  .input {
+    width: calc(100% - 22px); /* Full width minus padding and border */
+    padding: 10px;
+    margin-bottom: 10px; /* Space between input and buttons */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    margin: 5px; /* Space between buttons */
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text color */
+  }
+  
+  .button.clear {
+    background-color: #f44336; /* Red background */
+  }
+  
+  .button.add {
+    background-color: #4CAF50; /* Green background */
+  }
+  
