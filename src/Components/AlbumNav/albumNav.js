@@ -1,9 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
-import Navbar from './Navbar';
-import AlbumCard from './albumCard';
 
-import AddForm from './addForm';
+
+
+
+import AddForm from '../AddForm/addForm';
 import { useState } from 'react';
 import album from './albumNav.module.css';
 

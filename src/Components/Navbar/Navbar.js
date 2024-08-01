@@ -1,6 +1,6 @@
 
 import { Outlet } from 'react-router-dom';
-import './App.css';
+
 import navEle from './navbar.module.css'
 function Navbar() {
   return (

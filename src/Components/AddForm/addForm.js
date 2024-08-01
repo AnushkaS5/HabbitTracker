@@ -2,10 +2,11 @@
 import { useState, useEffect } from 'react';
 
 import addInfo from './addForm.module.css';
-import AlbumContent from './albumContent';
+import AlbumContent from '../AlbumContent/albumContent';
 import { useDispatch } from 'react-redux';
-import { actions } from './redux/Reducer/habitReducer';
-
+import { actions } from '../../redux/Reducer/habitReducer';
+import { toast , ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function AddForm() {
   const dispatch = useDispatch();
@@ -38,7 +39,7 @@ function AddForm() {
       clear(); 
       console.log("formData",formData);
       dispatch(actions.add(formData.name));
-      
+      toast.success("New Habbit Added");
     }
   }
 
@@ -46,6 +47,7 @@ function AddForm() {
     pic ? (
       <>
         <AlbumContent album={album} />
+        <ToastContainer/>
       </>
     ) : (
       <>
@@ -65,6 +67,7 @@ function AddForm() {
             </div>
           </form>
         </div>
+        <ToastContainer />
       </>
     )
   );

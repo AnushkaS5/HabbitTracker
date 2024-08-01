@@ -4,9 +4,10 @@ import each from './eachpic.module.css';
 import content from './albumContent.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { actions, habbitSelector } from './redux/Reducer/habitReducer';
-import Modal from './modal';
-import AlbumCard from './albumCard';
+import { actions,habbitSelector } from '../../redux/Reducer/habitReducer';
+
+import Modal from '../Modal/modal';
+import AlbumCard from '../AlbumCard/albumCard';
 function AlbumContent() {
   const [showModal, setShowModal] = useState(false);
   const [selectedHabit, setSelectedHabit] = useState(null);
@@ -15,7 +16,8 @@ function AlbumContent() {
   const habbits = useSelector(habbitSelector);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  
+  
   useEffect(() => {
     const storedStatuses = JSON.parse(localStorage.getItem('habitStatuses')) || {};
     setHabitStatuses(storedStatuses);
@@ -62,6 +64,7 @@ function AlbumContent() {
     const ans = window.confirm("Are you sure??");
     if(ans){
       dispatch(actions.delete(index));
+      
     }
    
   };
@@ -70,6 +73,7 @@ function AlbumContent() {
     <>
       {showNav ? (
         <AlbumCard />
+       
       ) : (
         <>
           <img
@@ -109,6 +113,7 @@ function AlbumContent() {
               onClose={handleCloseModal}
             />
           )}
+          
         </>
       )}
     </>
