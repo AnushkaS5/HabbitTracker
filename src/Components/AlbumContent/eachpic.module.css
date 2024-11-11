@@ -1,45 +1,48 @@
-/* 
+/* .album {
+  border: 5px solid rgb(140, 9, 173);
+  width: 95%; 
+  height: 10%; 
+  border-radius: 15px;
+  padding: 5px;
+  margin: 10px;
+  box-sizing: border-box; 
+  overflow: hidden;
+  cursor: pointer;
+  color: black;
+} */
 .album {
-    border: 5px solid red;
-    width: 95%; 
-    height: 100px; 
-    padding: 5px;
-    margin: 10px;
-    box-sizing: border-box;
-    
-    overflow: hidden;
-    overflow-wrap:anywhere;
-    flex-direction: row; 
-    cursor: pointer;
-  }
-   */
-   .album {
-    border: 5px solid rgb(140, 9, 173);
-    width: 95%; 
-    height:10%;/* Adjust width to ensure three items per row with space between */
-    border-radius: 15px;
-    padding: 5px;
-    margin: 10px;
-    box-sizing: border-box; /* Ensures padding is included in the total width and height */
-    overflow: hidden;
-    cursor: pointer;
-    display: flex; /* Use flexbox for layout */
-    align-items: center; /* Center items vertically */
+  border: 5px solid rgb(140, 9, 173);
+  width: 95%; 
+  height: 10%;
+  border-radius: 15px;
+  padding: 5px;
+  margin: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensure space between items */
+  color: white; /* Ensure text color is white for visibility */
 }
 
-.album h4 {
-    width: 60%; /* Take up 60% of the width */
-    word-wrap: break-word; /* Ensure long text wraps within the div */
-    margin: 0; /* Remove default margin */
+.album h3 {
+  margin: 0; /* Remove default margin */
+  flex-grow: 1; /* Allow h3 to grow and take available space */
+  text-align: left; /* Align text to the left */
 }
-.del{
-  /* border:5px solid red; */
-  height:60%;
-  width:10%;
-  margin-left:70%;
+
+.del {
+  height: 60%;
+  width: 10%;
+  margin-left: 70%;
+  display: flex; /* Ensure it's a flex container for better alignment */
+  align-items: center; /* Center the delete icon vertically */
+  justify-content: center; /* Center the delete icon horizontally */
 }
-.del img{
-  width: 100%;
-  height: 100%;
+
+.del img {
+  width: 70px; /* Adjust width as needed */
+  height: 70px; /* Adjust height as needed */
   object-fit: contain;
 }

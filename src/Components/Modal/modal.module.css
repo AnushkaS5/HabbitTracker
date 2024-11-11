@@ -1,51 +1,154 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; 
+}
 
-   .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.modal {
+  height: 70%;
+  width: 70%;
+  background: #333; 
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
+  animation: fadeIn 0.3s; 
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
   }
-  
-  .modal {
-    height: 60%;
-    width: 60%;
-    background: black;
-    padding: 20px;
-    border-radius: 8px;
-    position: relative;
-    z-index: 1000;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-size: 20px;
-    color: aliceblue;
-  }
-  
-  .daysContainer {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-  
-  .dayBox {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 14px;
-    cursor: pointer;
-  }
-  
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 25px;
+  color: aliceblue;
+}
+
+.habitTitle {
+  margin: 20px 0;
+  font-size: 24px;
+}
+
+.daysContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.dayBox {
+  width: 60px; 
+  height: 60px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px; 
+  transition: background-color 0.3s ease; 
+}
+
+.dayBox:hover {
+  opacity: 0.8; 
+}
+
+.buttonContainer {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px; 
+}
+
+.save, .reset, .cancel {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s; 
+}
+
+.save {
+  background-color: green;
+}
+
+.save:hover:enabled {
+  background-color: darkgreen; 
+}
+
+.reset {
+  background-color: orange;
+}
+
+.reset:hover:enabled {
+  background-color: darkorange; 
+}
+
+.cancel {
+  background-color: red;
+}
+
+.cancel:hover:enabled {
+  background-color: darkred; /* Darker red on hover */
+}
+
+.save:disabled,
+.reset:disabled,
+.cancel:disabled {
+  background-color: gray; /* Gray out disabled buttons */
+  cursor: not-allowed; /* Change cursor to indicate disabled state */
+}
+.dayBox {
+  width: 80px; /* Adjust width to fit day and date */
+  height: 60px; /* Adjust height if necessary */
+  display: flex;
+  flex-direction: column; /* Stack day and date */
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.button {
+  background-color: #007BFF; /* Primary button color */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
